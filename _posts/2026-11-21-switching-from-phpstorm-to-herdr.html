@@ -1,0 +1,19 @@
+---
+layout: post
+title: Switching from PhpStorm to Herdr App
+disqus_id:
+---
+
+<p class="lead">I have used PhpStorm for years. This month I cancelled my license and moved to Herdr App.</p>
+
+<p>The main reason is that I realised I no longer need an IDE. I don't write code myself anymore. I describe what I want, let agents do the typing, and spend my time reviewing and deciding. An IDE is built around writing code, and when you are not the one typing, most of it sits unused while you keep paying for it.</p>
+
+<p>PhpStorm is a subscription, and it is a fair price for a tool you use the way it was designed to be used. For me it stopped feeling justified. The process also uses a lot of system resources, which matters when the same machine runs several projects, DDEV containers and agents.</p>
+
+<p>I evaluated <a href="https://herdr.dev">Herdr App</a> for a single day. Within the first few hours I had written my own <a href="https://github.com/petertornstrand/herdr-app-ddev">mod for DDEV</a>, something I missed from PhpStorm, and that settled most of the question. A tool you can extend that quickly, to fit how you already work, is a tool you can live in.</p>
+
+<p>I have since built two more mods. <a href="https://github.com/petertornstrand/herdr-app-human">One</a> is a checklist of the things my agents ask me to do, so I don't have to keep track of them in chat. I can copy a command, or reject an item and send it back to the agent. The <a href="https://github.com/petertornstrand/herdr-app-diagrams">other</a> shows Mermaid diagrams that the agent draws when I ask, such as a plan, a process or a data model.</p>
+
+<p>There is one thing I still miss: a really good file tree. PhpStorm's project view is something you stop noticing until it is gone. I tried a Neovim mod in Herdr, but it didn't suit me, so for now that is a gap.</p>
+
+<p>The debugger is less of a loss than I expected. I haven't needed a visual debugger integration yet, and Xdebug and XHGui both come with DDEV, so I can still use them. If my work changes and I start writing code by hand again, I might come back. Until then, I would rather spend that money and those resources elsewhere.</p>
