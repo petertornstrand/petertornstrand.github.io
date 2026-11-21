@@ -1,0 +1,12 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# Peter Törnstrand
+
+> Personal blog of Peter Törnstrand, a web developer and open source enthusiast who has worked with the web since 1997 and has been active in the Drupal community since 2008. Every post is also available as Markdown by appending .md to its URL, without the trailing slash.
+
+## Posts
+{% for post in site.posts %}
+- [{{ post.title }}]({{ site.url }}{{ post.url | split: '/' | join: '/' }}.md): {{ post.date | date: "%Y-%m-%d" }}
+{%- endfor %}

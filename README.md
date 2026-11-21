@@ -76,5 +76,6 @@ bundle exec jekyll build
 ## 🚢 Deployment
 
 Deployments are automated to minimize maintenance overhead:
-- **GitHub Pages / Actions**: Pushing to `master` or `main` triggers `.github/workflows/pages.yml`, which builds and deploys the static site directly to GitHub Pages over HTTPS.
+- **GitHub Pages / Actions**: Pushing to `master` or `main` triggers `.github/workflows/jekyll.yml`, which builds and deploys the static site directly to GitHub Pages over HTTPS.
+- **Markdown and llms.txt**: `_plugins/markdown_posts.rb` publishes a Markdown version of every post at its URL plus `.md`, and `llms.txt` lists them. The plugin only runs because the site uses plain `jekyll` and not the `github-pages` gem, which forces safe mode and ignores `_plugins/`.
 - **Custom Domain**: Configured via the `CNAME` file for `tornstrand.com`.
