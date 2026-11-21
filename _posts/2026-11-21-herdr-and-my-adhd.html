@@ -1,0 +1,65 @@
+---
+layout: post
+title: Herdr App and my ADHD
+disqus_id:
+---
+
+<p class="lead">In my last post I wrote that I moved from PhpStorm to Herdr App because I no longer need an IDE. There is a second reason I didn't mention: Herdr is the first tool I have been able to bend around my ADHD, instead of bending myself around the tool.</p>
+
+<p>I have ADHD. The parts that cost me the most at work are not about skill. They are working memory, switching between tasks, and keeping track of things that are not in front of me right now. Most developer tools assume you can hold all of that in your head. Mine doesn't hold it for long.</p>
+
+<p>Working with AI agents made this more visible. My productivity has gone up enormously, but so has the number of balls in the air. On a recent Monday I had several client projects going at once, and by the afternoon I was worn out. I often forget the current status of a project, and the plain interface of Claude Code did not help. Whatever I needed was buried somewhere in the wall of text the agent had produced, and I kept having to ask it to repeat itself.</p>
+
+<p>So I stopped treating that as a flaw in me and started treating it as a requirement for my tools. This is how I have set things up. It is personal, and it won't fit everyone, but the approach might.</p>
+
+<h2>Keep nothing in my head</h2>
+
+<p>The biggest change is that I no longer rely on remembering what my agents have asked me to do. An agent says "clear the cache on staging" in the middle of a long answer, I get pulled away by something else, and ten minutes later it is gone.</p>
+
+<p>That is why I built <a href="https://github.com/petertornstrand/herdr-app-human">Herdr Human</a>. Every time an agent needs me to do something, it registers it in a checklist with <code>human-add</code>. The list shows up in a panel, next to the terminals. I can copy the command with a click, tick it off, or reject it and send it back to the agent to do itself. When an agent can't continue until I'm done, the card gets a red border, so I can see what is blocking work without searching for it.</p>
+
+<p>The principle is simple: if something waits on me, it must be somewhere I will see it, not in a scrollback I have to remember to check.</p>
+
+<p>The same goes the other way. Anything I hand over to an agent, a person or a ticket goes into a <code>STATUS.md</code> in the project, with an owner and a trigger. Once it is there, it is closed for me. I don't have to keep worrying about it, because the agent reads the file at the start of every session and acts when the trigger has occurred.</p>
+
+<h2>One thing in front of me</h2>
+
+<p>Context switching is expensive for me, and I tend to have several projects open at once. So I have put the things I otherwise would go looking for in the same window: a <a href="https://github.com/petertornstrand/herdr-app-ddev">DDEV mod</a>, a calendar that shows my meetings with the link to join, and a list of my tickets. Looking something up in another application is how a five-minute check turns into half an hour on something else. Having it one glance away removes the exit.</p>
+
+<p>The diagrams mod does something similar for understanding. When I ask for a plan, a process or a data model, the agent draws it as a Mermaid diagram next to the terminal. I think better in pictures than in a wall of text, and I don't have to build the picture in my head first.</p>
+
+<h2>Training the agent, in CLAUDE.md</h2>
+
+<p>The other half is my global <code>CLAUDE.md</code>. It is a description of how I want to be worked with, and a lot of it is written with my ADHD in mind. These are the rules that make the biggest difference:</p>
+
+<ul>
+    <li><strong>A short numbered plan, one step at a time.</strong> Big tasks are overwhelming. A plan I can see, and one step to focus on, is not.</li>
+    <li><strong>Flag it when I drift.</strong> I'm good at finding interesting tangents. The agent should say so in one line and ask whether to park it. Parking is the key word: the idea isn't dismissed, it is just not now.</li>
+    <li><strong>Never more than one question.</strong> A list of questions is a list of decisions, and decisions are where I stall. If I must answer something to move on, it should be exactly one thing.</li>
+    <li><strong>Lead with the answer.</strong> No preamble, no restating my question, no summary of what was just done. If the first paragraph isn't the point, I might not reach the point.</li>
+    <li><strong>Complete commands I can copy and run.</strong> Never "add this to the config". Every step I have to translate myself is a step where I can get distracted.</li>
+    <li><strong>End with "Klart." when nothing waits on me.</strong> This is the one I like best. I don't have to wonder whether there is something I forgot to read. If the reply doesn't end with it, something is waiting. If it does, I can let go.</li>
+</ul>
+
+<p>None of these rules are specific to ADHD. Plenty of people would be glad to have an assistant that gets to the point. But for me they are the difference between a tool that helps and a tool that adds one more thing to keep track of.</p>
+
+<h2>A second brain that knows how I work</h2>
+
+<p>Outside the terminal I keep a second brain: an Obsidian vault that Claude maintains as a wiki of my projects, decisions and commitments. It has its own <code>CLAUDE.md</code>, and the section on how to help me starts with a plain statement that I have ADHD, that I learn fast when something interests me and lose track of what doesn't. Four instructions follow from that:</p>
+
+<ul>
+    <li><strong>Capture commitments.</strong> Whenever I promise someone something in a note, a transcript or a conversation, it goes on a list that is shown in every morning brief. I can't count on remembering a promise I made on a Tuesday.</li>
+    <li><strong>Slow down quick decisions.</strong> When I'm about to make a significant decision, the agent asks what it is based on and what the alternatives are. Just one question, and it never blocks me. The decision and its reasoning are written down, so that future me can see why.</li>
+    <li><strong>Push delegation.</strong> I have a strong need for control and do too much myself. When I plan to do something, the agent asks whether someone on the team could do it, and tracks what I hand over so that letting go feels safe.</li>
+    <li><strong>Make the boring parts small.</strong> Tasks I'm not excited about are presented as short, concrete next steps, ideally tied to something I do care about.</li>
+</ul>
+
+<p>It is a little strange to write instructions to an assistant about your own weaknesses. But it is the same idea as everything above: describe the problem once, and let the environment handle it, instead of using willpower every day.</p>
+
+<h2>Why this works in Herdr</h2>
+
+<p>I could have done parts of this in other tools. What makes it work here is how quickly I can change things. When I notice a place where I lose track, I can write a small mod in an afternoon and have it in front of me the same day. In a tool I can't change, I would work around the problem forever.</p>
+
+<p>That is what I mean by flexibility. It is less about features and more about being allowed to shape the environment around the way my brain works, instead of the other way around.</p>
+
+<p>P.S. This post was written by Claude.</p>
